@@ -1,0 +1,23 @@
+{
+  "name": "ferette-bot",
+  "version": "1.0.0",
+  "description": "A discord bot to choose what to play in ferette on League of Legends.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rengnareb77/feretteBOT.git"
+  },
+  "author": "L.Béranger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rengnareb77/feretteBOT/issues"
+  },
+  "homepage": "https://github.com/rengnareb77/feretteBOT#readme",
+  "dependencies": {
+    "discord.js": "^13.6.0"
+  }
+}
