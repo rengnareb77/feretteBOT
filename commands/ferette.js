@@ -28,15 +28,17 @@ module.exports = {
             .setRequired(false)),
 
         async execute(client,interaction) {
-            let user = interaction.options._hoistedOptions;
-            let users = []
-            for (let i = 0; i < user.length; i ++){
-                users.push(interaction.options.getMember(user[i].name));
+            try{
+                let user = interaction.options._hoistedOptions;
+                let users = []
+                for (let i = 0; i < user.length; i ++){
+                    users.push(interaction.options.getMember(user[i].name));
+                }
+
+                await run(client,interaction,users)
+            }catch (error) {
+                console.log(error)
             }
 
-            run(client,interaction,users)
-
-
-            
         },
 };
