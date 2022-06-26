@@ -1,6 +1,6 @@
 const { Client, Intents} = require('discord.js');
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { run } =  require('./ferette/gameMode.js');
+const { run } =  require('./ferette/gamemode.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -29,13 +29,14 @@ module.exports = {
 
         async execute(client,interaction) {
             try{
-                let user = interaction.options._hoistedOptions;
-                let users = []
-                for (let i = 0; i < user.length; i ++){
-                    users.push(interaction.options.getMember(user[i].name));
+                await interaction.deferReply({ephemeral: true});
+                let userSelected = interaction.options._hoistedOptions;
+                let names = []
+                for (user of userSelected){
+                    names.push(interaction.options.getMember(user.name));
                 }
 
-                await run(client,interaction,users)
+                await run(client,interaction,names)
             }catch (error) {
                 console.log(error)
             }

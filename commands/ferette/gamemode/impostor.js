@@ -28,6 +28,6 @@ module.exports = {
  * @param max the maximum value
  * @return a random number between min and max
  */
- function getRandom(min,max){
+function getRandom(min,max){
     return (Math.floor(Math.random() * (max - min + 1)) + min) ;
 }
